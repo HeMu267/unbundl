@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family:'Raleway', sans-serif;
+}
+html,body{
+    overflow-x: hidden;
+    height: 100vh;
+}
+#layout{
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputs{
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid rgb(162, 157, 157);;
+    width: 50%;
+    height: 50px;
+}
+.inputdiv{
+    display: flex;
+    margin-top: 10px;
+    gap:30px
+}
+#modal{
+    display: none;  
+    position: fixed;
+    justify-content: center;
+    align-content: center;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+#booking{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 10px;
+    background-color:white;
+    border-radius: 30px;
+    margin: auto;
+    
+}
+.container{
+    width:100vw;
+    position: relative;
+    /* max-width: 1260px; */
+}
+.container2{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1560px;
+}
+#navbar{
+    position: fixed;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    z-index: 1000;
+    padding-right: 8px;
+    background-color:#FFF1E6;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color:#464646;
+
+}
+.vectors{
+    width: 14px;
+    height: 10px;
+}
+.inner-container{
+    width:91.667%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1260px;
+}
+#nav-inner-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:24px;
+    position: relative;
+}
+#nav-container{
+    display: flex;
+    justify-content: space-between;
+}
+#navlinks{
+    display: flex;
+    gap:8px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+#navlinks div{
+    padding: 4px;
+}
+.separator {
+    width: 1px;
+    height: 18px;
+    background-color:#464646;
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 20px;
+}
+.nav-buttons button{
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 24px;
+    border: 1px solid #DE6F0D;
+    font-weight: 600;
+    font-size: 14px;
+}
+.button1{
+    color:white;
+    background-color: #F8943F;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #DE6F0D;
+    justify-content: center;
+    padding-top: 8px;
+    cursor: pointer;
+}
+#button2{
+    color:#4D2C19;    ;
+    background-color:#FFF1E6 ;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #FBBE9C;
+}
+#second-comp{
+    width: 100%;
+    background-color:#B5C1A6;
+    padding-top: 150px;
+}
+#second-comp-inner{
+    width: 81.67%;
+    margin: auto;
+    display: flex;
+}
+#second-comp-inner div:first-child{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+#dropdown-menu {
+    position: absolute;
+    display: none;
+    flex-wrap: wrap;
+    z-index: 100;
+    padding: 24px;
+    top:130%;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #FFF8F2;
+    border-radius: 24px;
+    width: 90%;
+}
+.dropdown-items{
+    display: flex;
+    width: 33.33%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+}
+.dropdown-items image{
+    width: 8px;
+    height: 8px;
+}
+.dropdown-items:hover{
+    color:#DE6F0D;
+}
+#dropdown-help{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: 130%;
+    background-color: #FFF8F2;
+    width: 30%;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+#dropdown-help div{
+    display: flex;
+    justify-content: space-between;
+    padding:16px;
+    border-bottom: 2px solid #FFC591;
+    align-items: center;
+}
+#dropdown-help div:last-child{
+    border: none;
+}
+#third-comp{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+}
+#google{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+    gap: 30px;
+    border-right: 1px solid orange;
+}
+#scroll-cities{
+    position: relative;
+    width: 100%;
+}
+.scroll-button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    padding-right: 20px;
+    border-radius: 24px;
+    border: 1px solid rgb(162, 157, 157);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    position: relative;
+    color: #a4a0a0;
+    width: 100%;
+}
+.scrollable-content{
+    position: absolute;
+    z-index: 400;
+    max-height: 200px;
+    display: none;
+    top: 110%;
+    overflow-y: scroll;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 18px;
+    background-color: white;
+    border: 1px solid #464646;
+}
+
+.scrollable-content a{
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    color: black;
+}
+
+#fourth-comp{
+    padding: 40px;
+}
+#fourth-comp-inner{
+    background-color: #FFF9F4;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 30px;
+    align-items: center;
+}
+#fourth-comp p:first-child{
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+}
+#teeths{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: center;
+}
+.teeth{
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    width: 14%;
+    padding: 20px;
+    margin-bottom: 40px;
+    align-items: center;
+    border-radius: 10px;
+    gap: 20px;
+    justify-content: center;
+}
+.teeth p{
+    text-align: center;
+    max-width: 100px;
+}
+.teeth img{
+   width: 35px;
+   height: 40px;
+   padding: 2px;
+}
+
+#fifth-comp{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+    gap:10px;
+}
+
+#sixth-comp{
+    padding: 60px;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.1s ease;
+    cursor: grab;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 200px; 
+}
+
+.carousel-image {
+    width: 100%; 
+    height: 300px; 
+    border-radius: 8px;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none; 
+}
+
+#seventh-comp{
+    background-color:#FFF9F4;   
+    padding-top: 60px; 
+    padding-bottom: 60px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color:#FFEFE2;
+    padding: 10px 0;
+}
+
+.marquee {
+    display: flex;
+    gap: 100px; 
+    padding-left: 100%; 
+    animation: marquee 15s linear infinite;
+    font-size: 18px;
+    align-items: center;
+    color: #4b382f;
+}
+
+.marquee-item {
+    display: inline-block;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+#sec-last-comp{
+    padding: 60px;
+}
+#sec-last-comp-inner{
+    background-color: #f5ece6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    padding: 40px;
+}
+.faq-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.faq-column {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.faq-question span {
+    font-weight: bold;
+}
+
+.faq-plus {
+    font-size: 1.5em;
+    color: #f0ad4e; 
+}
+#faq-section{
+    padding: 100px;
+    padding-top: 60px;
+}
+
+footer
+ {
+            background-color: #3D2010;
+            color: #fff; 
+            padding: 30px 20px; 
+            text-align: center; 
+        }
+
+        .footer-content {
+            max-width: 960px; 
+            margin: 0 auto; 
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+        }
+
+        .footer-column {
+            width: 20%; 
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none; 
+            padding: 0;
+        }
+
+        .footer-column a {
+            color: #fff; 
+            text-decoration: none; 
+            display: block; 
+            margin-bottom: 5px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .footer-logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom {
+            font-size: 0.8em;
+            margin-top: 20px;
+        }
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar for horizontal scroll */
+}
+
+::-webkit-scrollbar-track {
+    background: #f5ece6; /* Background of the scrollbar track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(243, 210, 167); /* Color of the scrollbar handle */
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; /* Space around the scrollbar handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color:orange; /* Color on hover */
+}
+
+
