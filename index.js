@@ -16,28 +16,65 @@ function toggleDropdownhelp(event) {
     event.stopPropagation();
     const helpDropdown = document.getElementById("dropdown-help");
     const treatmentDropdown = document.getElementById("dropdown-menu");
+    const Navlinks= document.getElementById("navlinks-dropdown");
     
     // Hide the treatment dropdown if it is visible
     if (window.getComputedStyle(treatmentDropdown).display === "flex") {
         treatmentDropdown.style.display = "none";
     }
-    
+    if (window.getComputedStyle(Navlinks).display === "flex") {
+        Navlinks.style.display = "none";
+    }
     // Toggle help dropdown
     helpDropdown.style.display = helpDropdown.style.display === "flex" ? "none" : "flex";
+}
+document.getElementById("hamburger").addEventListener("click",()=>{
+    console.log("hello");
+    const menu=document.getElementById("sliding-menu");
+
+    menu.classList.toggle('open');
+})
+document.getElementById("close").addEventListener("click",()=>{
+    const menu=document.getElementById("sliding-menu");
+    menu.classList.remove('open');
+})
+window.addEventListener('resize', () => {
+    const menu=document.getElementById("sliding-menu");
+
+    if (window.innerWidth >= 768) {
+        menu.classList.remove('open');
+        // slidingMenu.style.transform = 'translateX(100%)'; // Reset position
+    }
+});
+function toggleNavlinks(event)
+{
+    event.stopPropagation();
+    const Navlinks= document.getElementById("navlinks-dropdown");
+    // const treatmentDropdown = document.getElementById("dropdown-menu");
+    const helpDropdown = document.getElementById("dropdown-help");
+
+    console.log("helg");
+    // Hide the treatment dropdown if it is visible
+    if (window.getComputedStyle(helpDropdown).display === "flex") {
+        helpDropdown.style.display = "none";
+    }
+    // Toggle help dropdown
+    Navlinks.style.display = Navlinks.style.display === "flex" ? "none" : "flex";
 }
 
 // Add event listeners to toggle the dropdowns
 document.getElementById("treatment").addEventListener("click", toggleDropdown);
 document.getElementById("button2").addEventListener("click", toggleDropdownhelp);
-
+document.getElementById("navlinks-mini").addEventListener("click",toggleNavlinks);
 // Close both dropdowns if clicked outside
 document.addEventListener("click", function(event) {
     const treatmentDropdown = document.getElementById("dropdown-menu");
     const helpDropdown = document.getElementById("dropdown-help");
-
-    if (!treatmentDropdown.contains(event.target) && !helpDropdown.contains(event.target)) {
+    const Navlinks= document.getElementById("navlinks-dropdown");
+    if (!treatmentDropdown.contains(event.target) && !helpDropdown.contains(event.target) && !Navlinks.contains(event.target)) {
         treatmentDropdown.style.display = "none";
         helpDropdown.style.display = "none";
+        Navlinks.style.display="none";
     }
 });
 document.addEventListener("click",(event)=>{
@@ -134,18 +171,18 @@ document.querySelectorAll('.carousel').forEach(carousel => {
       isDragging = false;
     });
 });
-const carouselInner = document.querySelector('.eo8-carousel-inner');
-const prevBtn = document.getElementById('eo8-prevBtn');
-const nextBtn = document.getElementById('eo8-nextBtn');
-let currentIndex = 0;
+// const carouselInner = document.querySelector('.eo8-carousel-inner');
+// const prevBtn = document.getElementById('eo8-prevBtn');
+// const nextBtn = document.getElementById('eo8-nextBtn');
+// let currentIndex = 0;
 
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % 3; // 3 is the number of slides
-    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
+// nextBtn.addEventListener('click', () => {
+//     currentIndex = (currentIndex + 1) % 3; // 3 is the number of slides
+//     carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+// });
 
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + 3) % 3;
-    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
+// prevBtn.addEventListener('click', () => {
+//     currentIndex = (currentIndex - 1 + 3) % 3;
+//     carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+// });
   
